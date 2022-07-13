@@ -16,7 +16,7 @@ import Restart from "./components/Restart";
 
 function App() {
   // Plateau
-  const board = [
+  let board = [
     {
       categorie: "Arrivée",
     },
@@ -40,7 +40,7 @@ function App() {
     },
   ];
   //  API dans des variables
-  const [geo, setGeo] = React.useState("");
+  let [geo, setGeo] = React.useState("");
   useEffect(() => {
     axios
       .get("http://localhost:5050/api/geo")
@@ -48,7 +48,7 @@ function App() {
       .then((result) => setGeo(result.data))
       .catch((err) => console.log(err));
   }, []);
-  const [sport, setSport] = React.useState("");
+  let [sport, setSport] = React.useState("");
   useEffect(() => {
     axios
       .get("http://localhost:5050/api/sport")
@@ -56,7 +56,7 @@ function App() {
       .then((result) => setSport(result.data))
       .catch((err) => console.log(err));
   }, []);
-  const [film, setFilm] = React.useState("");
+  let [film, setFilm] = React.useState("");
   useEffect(() => {
     axios
       .get("http://localhost:5050/api/film")
@@ -65,7 +65,7 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  const [images, setImages] = React.useState("");
+  let [images, setImages] = React.useState("");
   useEffect(() => {
     axios
       .get("http://localhost:5050/api/images")
@@ -74,7 +74,7 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  const [musique, setMusique] = React.useState("");
+  let [musique, setMusique] = React.useState("");
   useEffect(() => {
     axios
       .get("http://localhost:5050/api/musique")
@@ -85,55 +85,55 @@ function App() {
 
   // States utilisés pendant le jeu
 
-  const [player1, setPlayer1] = React.useState(board.length - 1);
-  const [player2, setPlayer2] = React.useState(board.length - 1);
-  const [player3, setPlayer3] = React.useState(board.length - 1);
-  const [questionPosee, setQuestionPosee] = React.useState(
+  let [player1, setPlayer1] = React.useState(board.length - 1);
+  let [player2, setPlayer2] = React.useState(board.length - 1);
+  let [player3, setPlayer3] = React.useState(board.length - 1);
+  let [questionPosee, setQuestionPosee] = React.useState(
     "Player 1, choisis ton nom et ton perso?"
   );
-  const [answer, setAnswer] = React.useState("");
-  const rey = "./constirey.png";
-  const julien = "./fatju.png";
-  const marion = "./marionkick.png";
-  const pigeon = "./pigeonrey.png";
-  const [currentPlayer, setCurrentPlayer] = React.useState("");
-  const [a, setA] = React.useState(Math.floor(Math.random() * 20));
-  const [b, setB] = React.useState(Math.floor(Math.random() * 20));
-  const [c, setC] = React.useState(Math.floor(Math.random() * 20));
-  const [d, setD] = React.useState(0);
-  const [x, setX] = React.useState(0);
-  const [player1Name, setPlayer1Name] = React.useState("");
-  const [player2Name, setPlayer2Name] = React.useState("");
-  const [player3Name, setPlayer3Name] = React.useState("");
-  const [questionImageOpen, setQuestionImageOpen] = React.useState(false);
-  const [imageSource, setImageSource] = React.useState("images[a].pic");
-  const [choice, setChoice] = React.useState(rien);
-  const [choice2, setChoice2] = React.useState(rien);
-  const [choice3, setChoice3] = React.useState(rien);
-  const [martine, setMartine] = React.useState(true);
-  const [deden, setDeden] = React.useState(false);
-  const [sarah, setSarah] = React.useState(false);
-  const [pop, setPop] = React.useState(0);
-  const rep = document.querySelector(".push");
-  const elem = document.querySelector(".barre");
-  const [nbJoueurs2, setNbJoueurs2] = React.useState(false);
-  const [nbJoueurs3, setNbJoueurs3] = React.useState(false);
-  const [displayNb, setDisplayNb] = React.useState(true);
-  const [nbJoueurs, setNbJoueurs] = React.useState(0);
-  const interval = useRef();
-  const [run, setRun] = React.useState(false);
-  const [progress, setProgress] = React.useState(0);
-  const [musicPlaying, setMusicPlaying] = React.useState(
+  let [answer, setAnswer] = React.useState("");
+  let rey = "./constirey.png";
+  let julien = "./fatju.png";
+  let marion = "./marionkick.png";
+  let pigeon = "./pigeonrey.png";
+  let [currentPlayer, setCurrentPlayer] = React.useState("");
+  let [a, setA] = React.useState(Math.floor(Math.random() * 20));
+  let [b, setB] = React.useState(Math.floor(Math.random() * 20));
+  let [c, setC] = React.useState(Math.floor(Math.random() * 20));
+  let [d, setD] = React.useState(0);
+  let [x, setX] = React.useState(0);
+  let [player1Name, setPlayer1Name] = React.useState("");
+  let [player2Name, setPlayer2Name] = React.useState("");
+  let [player3Name, setPlayer3Name] = React.useState("");
+  let [questionImageOpen, setQuestionImageOpen] = React.useState(false);
+  let [imageSource, setImageSource] = React.useState("images[a].pic");
+  let [choice, setChoice] = React.useState(rien);
+  let [choice2, setChoice2] = React.useState(rien);
+  let [choice3, setChoice3] = React.useState(rien);
+  let [martine, setMartine] = React.useState(true);
+  let [deden, setDeden] = React.useState(false);
+  let [sarah, setSarah] = React.useState(false);
+  let [pop, setPop] = React.useState(0);
+  let rep = document.querySelector(".push");
+  let elem = document.querySelector(".barre");
+  let [nbJoueurs2, setNbJoueurs2] = React.useState(false);
+  let [nbJoueurs3, setNbJoueurs3] = React.useState(false);
+  let [displayNb, setDisplayNb] = React.useState(true);
+  let [nbJoueurs, setNbJoueurs] = React.useState(0);
+  let interval = useRef();
+  let [run, setRun] = React.useState(false);
+  let [progress, setProgress] = React.useState(0);
+  let [musicPlaying, setMusicPlaying] = React.useState(
     new Audio("./player1.m4a")
   );
-  const denis = "./denis.gif";
-  const wil = "./What.gif";
-  const [recap, setRecap] = React.useState([{ question: "", reponse: "" }]);
+  let denis = "./denis.gif";
+  let wil = "./What.gif";
+  let [recap, setRecap] = React.useState([{ question: "", reponse: "" }]);
 
   useEffect(() => {
     function shuffleArray(array) {
-      for (const i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
       }
     }
@@ -330,7 +330,7 @@ function App() {
     }
   }
 
-  const [finalGif, setFinalGif] = React.useState("");
+  let [finalGif, setFinalGif] = React.useState("");
   // Alert du gagnant
   useEffect(() => {
     if (player1 === 0) {

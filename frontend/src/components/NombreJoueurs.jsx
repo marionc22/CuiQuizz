@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from "react";
-// import player2s from "./player2.m4a"
+import player2s from "./player2.mp3"
 // import "./App.css";
 const NombreJoueurs = (props) => {
   const change2Players = (e) => {
@@ -9,7 +9,7 @@ const NombreJoueurs = (props) => {
     props.setDisplayNb(false)
     props.setNbJoueurs(2)
 props.musicPlaying.play()
-// props.setMusicPlaying(new Audio(player2s))
+props.setMusicPlaying(new Audio(player2s))
   };
   const change3Players = (e) => {
     e.preventDefault();
